@@ -1,0 +1,27 @@
+
+
+【venv】搭建虚拟环境
+poCarolinadeMBP:~ Carolina$ pip3 freeze > requirements.txt
+poCarolinadeMBP:~ Carolina$ cd Study/
+poCarolinadeMBP:Study Carolina$ python3 -m venv venv
+poCarolinadeMBP:Study Carolina$ source venv/bin/activate
+(venv) poCarolinadeMBP:~ Carolina$ pip3 install -r requirements.txt
+(venv) poCarolinadeMBP:~ Carolina$ pip3 install --upgrade pip
+(venv) poCarolinadeMBP:Study Carolina$ cd /venv/lib/python3.7/site-packages
+(venv) poCarolinadeMBP:site-packages Carolina$ ls -lr
+
+
+
+【虚拟化后去初始化pip的方法】
+(venv) poCarolinadeMBP:Study Carolina$ python3 -m venv -—without-pip test_env
+(venv) poCarolinadeMBP:Study Carolina$ cd test_env/bin
+(venv) poCarolinadeMBP:bin Carolina$ ls -lr
+total 24
+lrwxr-xr-x  1 Carolina  staff    37  3 11 01:59 python3 -> /Users/Carolina/Study/venv/bin/python3
+lrwxr-xr-x  1 Carolina  staff     7  3 11 01:59 python -> python3
+-rw-r--r--  1 Carolina  staff  2421  3 11 01:59 activate.fish
+-rw-r--r--  1 Carolina  staff  1269  3 11 01:59 activate.csh
+-rw-r--r--  1 Carolina  staff  2213  3 11 01:59 activate
+(venv) poCarolinadeMBP:bin Carolina$ source activate
+(venv) poCarolinadeMBP:bin Carolina$ python3 -m ensurepip —upgrade
+(venv) poCarolinadeMBP:bin Carolina$ pip install --upgrade pip
