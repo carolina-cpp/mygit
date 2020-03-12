@@ -1,0 +1,505 @@
+-----[vim]----------------
+
+:wq     保存修改并退出
+
+:x     保存修改并退出
+
+:q     退出，如果对缓冲区进行过修改，则会提示
+
+:q!     强制退出，放弃修改
+
+-----[显示行号]----------------
+
+:set nu
+
+
+ 
+
+-------------------------------------------------------------------
+
+git branch -a|grep master
+
+ 
+
+git checkout -b new_br origin/master
+
+ 
+
+git pull --rebase
+
+git co --
+
+-------------------------------------------------------------------
+
+git co master
+
+-------------------------------------------------------------------
+
+git log --stat -N
+
+
+git log --pretty=format:"%h - %an, %ar : %s"
+ 
+
+git log --pretty=format:"%h - %an, %ar : %s" -N
+ 
+
+$ git log --pretty=format:"%h %s" --graph
+
+
+$ git show xxxx(???)
+
+ 
+
+-------------------------------------------------------------------
+
+gitk
+
+module add bcompare
+
+git difftool
+
+-----------【01. 删除】-----------------------
+
+rm -rf 某文件
+
+-----------【03. kill进程】-----------------------
+
+ps aux | grep $USER | grep eclipse
+
+
+kill 进程
+
+-----------【04. vim命令 】-----------------------
+-e filename 如果 filename存在，则为真 [ -e /var/log/syslog ]
+
+-d filename 如果 filename为目录，则为真 [ -d /tmp/mydir ]
+
+-f filename 如果 filename为常规文件，则为真 [ -f /usr/bin/grep ]
+
+-L filename 如果 filename为符号链接，则为真 [ -L /usr/bin/grep ]
+
+-r filename 如果 filename可读，则为真 [ -r /var/log/syslog ]
+
+-w filename 如果 filename可写，则为真 [ -w /var/mytmp.txt ]
+
+-x filename 如果 filename可执行，则为真 [ -L /usr/bin/grep ]
+
+filename1-nt filename2 如果 filename1比 filename2新，则为真 [ /tmp/install/etc/services -nt /etc/services ]
+
+filename1-ot filename2 如果 filename1比 filename2旧，则为真 [ /boot/bzImage -ot arch/i386/boot/bzImage ]
+
+字符串比较运算符 （请注意引号的使用，这是防止空格扰乱代码的好方法）
+
+-z string 如果 string长度为零，则为真 [ -z "$myvar" ]
+
+-n string 如果 string长度非零，则为真 [ -n "$myvar" ]
+
+string1= string2 如果 string1与 string2相同，则为真 [ "$myvar" = "one two three" ]
+
+string1!= string2 如果 string1与 string2不同，则为真 [ "$myvar" != "one two three" ]
+
+算术比较运算符
+
+num1-eq num2 等于   [ 3 -eq $mynum ]
+
+num1-ne num2 不等于   [ 3 -ne $mynum ]
+
+num1-lt num2 小于    [ 3 -lt $mynum ]
+
+num1-le num2 小于或等于  [ 3 -le $mynum ]
+
+num1-gt num2 大于    [ 3 -gt $mynum ]
+
+num1-ge num2 大于或等于 [ 3 -ge $mynum ]
+ 
+
+-----------【07. 查找文件】-----------------------
+
+find ./* -name "md_file_list.txt"
+
+-----------【08. xxxx】-----------------------
+
+zcat
+
+   zcat text.tgz
+ 
+
+head/tail
+
+　　(1)displays the first 6 lines of a file
+
+　　head -6 readme.txt
+
+   
+
+    (2)displays the last 25 lines of a file
+
+　　tail -25 mail.txt
+-----------【09. xxxx】-----------------------
+
+du -sh * | sort -n
+
+-----------【10. xxxx】-----------------------
+eclipse
+
+eclipse -cw
+
+eclipse -rc
+
+---------------------------
+
+cat <???> | grep <???>
+
+
+-------------------------------------------------------------------
+
+git log --pretty=format:"%cn committed %h on %cd" -N
+
+
+-------------------------------------------------------------------
+
+git hist|grep xxx
+
+gitk
+
+-------------------------------------------------------------------
+
+git st
+
+
+git diff
+
+git commit --amend
+
+git clean -xdf
+
+------------ [push to Master] -------------------------------------------------------
+
+git add  xxxx/xxx/xxx.c
+
+git commit xxxx/xxx/xxx.c
+
+ 
+git push origin HEAD:refs/for/master/
+
+git push origin HEAD:refs/for/master/Topic
+
+
+------------ [push to draft] -------------------------------------------------------
+Gerrit refspec: refs/for/<parent-branch>/<topic-name>%draft
+
+-------------------------------------------------------------------
+
+which xxxx(software)
+
+------------------------------------------
+
+git hist -3
+
+git reset HEAD^
+
+git st
+
+git difftool
+
+git add
+
+git commit
+
+git commit --amend
+
+
+------------------------------------------
+ 
+
+%Y%m%D%H%M%S
+
+`date+%F`
+
+------------------------------------------
+
+reset
+
+git reset HEAD^
+
+git hist -2
+------------[show your local branch detail]--------------------
+
+git br -vv
+
+------------[rebase Conflict]--------------------
+
+git mergetool
+
+git rebase --continue
+
+git rebase --abort
+
+ 
+
+git rebase --abort ???????,???rebase???????,2????commits?????
+
+ 
+
+--------[cherry-pick]---------------------
+
+ 
+
+git cherry-pick <commit id>
+
+ 
+
+------------<cherry-pick Conflict>-------------------
+
+git mergetool
+
+git cherry-pick --continue
+
+------------ [ ASCII ] -------------------
+
+grep --color='auto' -P -n "[\x80-\xFF]" <file_name>
+
+      or grep -n '[^ -~]' <file_name>
+
+------------ [ delete your local branch brs1 ] -----------------
+
+git branch –d <br1>
+
+ 
+
+------------ [ update submodule ] -----------------
+
+git submodule update --init
+
+ 
+
+----------- [ set yoursream: Master ]---------------------
+
+git br --set-upstream-to origin/master
+
+ 
+
+----------- [ set yoursream:maint ]---------------------
+
+git br --set-upstream-to origin/maint/xxx
+
+
+----------- [ set your branch ]---------------------
+
+git br --set-upstream-to
+
+--------?????????---------------------
+
+git rebase xxxx(?)
+
+
+--------[set bcompare]---------------------
+
+module avail bcompare
+
+--------[ cherry-pick ]---------------------
+
+git cherry-pick <commit id>
+
+--------[ show remote branch ]---------------------
+
+git br -r
+
+--------[ create new branch ]---------------------
+
+git co -b new_br <commit-id>
+
+git br new_br origin/master
+
+git co -b new_br --track origin/master
+--------[ git show ]---------------------
+
+git show <commit-id>
+
+--------[ untracked files ]---------------------
+
+git clean -f
+
+--------[ untracked ]---------------------
+
+git clean -fd
+
+--------[ gitignore  untrack ]---------------------
+
+git clean -xfd
+
+--------[ git clean ]---------------------
+git clean -nxfd
+git clean -nf
+git clean -nfd
+
+--------[hard commit-id]---------------------
+
+git reset --hard commit-id
+
+--------[revert commit]---------------------
+
+git revert <commit-id>
+
+--------[update]---------------------
+
+git reset HEAD^
+
+git co commit-id
+
+git co -b xxxxx
+
+git st
+
+--------[Checkout again, cunrrent changing will disappear]--------------------
+
+git co -- .
+
+--------[Delete Branch]---------------------
+
+git br -D xxxx
+
+exp: git br -D temp_br
+
+--------[drwxrwxrwx]---------------------
+
+chmod -R 777 ./
+
+--------xxxxxxxxxxxx---------------------
+
+git remote -v
+
+--------[ unzip tar ]---------------------
+
+tar -xvf xxxxx
+
+tar tzf xxxxx
+--------[ unzip .gz ]---------------------
+
+gunzip xxxxx
+
+--------[ Check Disk Size ]---------------------
+
+ps -ef
+
+--------[ update to <commit-id>revision ]---------------------
+
+git reset --hard <commit-id>
+
+--------[ revert <commit-id>commit ]----------------------
+
+git revert <commit-id>
+
+
+
+--------[patch]---------------------
+
+under root trunk xxxxx
+
+ 
+
+git format-patch -1
+
+patch -p1 < 0001-Patch-Fix-the-issue-.patch
+
+--------[patch help cmd]---------------------
+
+man patch
+--------[compare 2 branchs : br1 vs br2]---------------------
+
+git co br1
+
+git difftool -d br2
+
+--------[git help]---------------------
+
+git-scm
+
+--------[revert amend action]---------------------
+
+git reflog -n
+
+--------[Python]---------------------
+
+http://www.youtube.com/watch?v=Vhh_
+
+https://github.com/jefftrull/gdb_python_api
+
+http://jefftrull.github.io/
+
+https://channel9.msdn.com/Events/CPP/CppCon-2016/CppCon-2016-Greg-Law-GDB-A-Lot-More-Than-You-Knew
+
+--------[ gdb]---------------------
+
+n: single Step
+
+--------xxxxxxxxxxxx---------------------
+
+git difftool commit-id1  commit-id2 app/xxxxx/xxxxx/xxxxx/SockAddress.cpp
+
+ 
+
+--------[ check disk size]---------------------
+
+du -h
+
+du -sh
+
+du -sh *
+
+df -hl
+
+df -h | grep xxxx
+
+ 
+
+--------[ Show what revision and author last modified each line of a file ]---------------------
+
+git blames
+
+
+
+--------[  ]---------------------
+
+history 10
+
+ 
+
+--------[ undo add ]---------------------
+
+git reset HEAD
+
+ 
+
+--------[single file]---------------------
+
+git reset xxxxxx file.cpp
+
+ 
+
+--------[compare files in two directories.]---------------------
+
+diff -qr <dir1> <dir2>
+
+diff -qr ../aaaaa/bbbbb/cccccc ./bbbbb/cccccc
+
+ 
+
+--------xxxxxxxxxxxx---------------------
+
+ps -ef | grep xxx
+
+ps -aux | grep xxxx
+
+--------xxxxxxxxxxxx---------------------
+
+build -c lin xxxx
+
+ 
+
+
+
+
+
+
