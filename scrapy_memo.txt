@@ -1,0 +1,14 @@
+[Scrapy memo]
+
+
+poCarolinadeMBP:day0319_practice Carolina$ python3 -m scrapy startproject demo1
+
+poCarolinadeMBP:day0319_practice Carolina$ cd demo1/
+
+poCarolinadeMBP:demo1 Carolina$ python3 -m scrapy genspider example example.com
+
+poCarolinadeMBP:demo1 Carolina$ python3 -m scrapy crawl example
+
+
+poCarolinadeMBP:demo1 Carolina$ python3 -m scrapy crawl example —nolog
+
